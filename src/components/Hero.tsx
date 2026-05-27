@@ -1,33 +1,35 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Button from "./Button";
 
 function Hero() {
-  const playerRef = useRef<any>(null)
-  const [muted, setMuted] = useState(false)
+  type YTPlayer = {
+    mute?: () => void;
+    unMute?: () => void;
+    setVolume?: (v: number) => void;
+  } | null;
+  const playerRef = useRef<YTPlayer>(null);
 
   useEffect(() => {
-    const tag = document.createElement('script')
-    tag.src = 'https://www.youtube.com/iframe_api'
-    document.body.appendChild(tag)
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
 
-    ;(window as any).onYouTubeIframeAPIReady = () => {
-      playerRef.current = new (window as any).YT.Player('yt-player', {})
+    interface YTGlobal {
+      Player: new (elementId: string, opts?: unknown) => YTPlayer;
     }
-  }, [])
-
-  const toggleMute = () => {
-    if (!playerRef.current) return
-    if (muted) {
-      playerRef.current.unMute()
-      playerRef.current.setVolume(80)
-    } else {
-      playerRef.current.mute()
-    }
-    setMuted(!muted)
-  }
+    const win = window as unknown as {
+      onYouTubeIframeAPIReady?: () => void;
+      YT?: YTGlobal;
+    };
+    win.onYouTubeIframeAPIReady = () => {
+      if (win.YT && typeof win.YT.Player === "function") {
+        playerRef.current = new win.YT.Player("yt-player", {}) as YTPlayer;
+      }
+    };
+  }, []);
 
   return (
     <section
@@ -53,25 +55,32 @@ function Hero() {
         </h1>
 
         <div className="flex gap-3">
-          <Button href="#contact" variant="secondary" className="px-8 py-3">Get Started</Button>
-          <Button href="#solutions" variant="ghost" className="px-8 py-3">Learn More</Button>
+          <Button href="#contact" variant="secondary" className="px-8 py-3">
+            Get Started
+          </Button>
+          <Button href="#solutions" variant="ghost" className="px-8 py-3">
+            Learn More
+          </Button>
         </div>
 
         {/* Video frame */}
         <div className="w-full mt-6 p-3 md:p-4 rounded-3xl bg-white/10">
           <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <div
+              className="relative w-full"
+              style={{ paddingBottom: "56.25%" }}
+            >
               <iframe
                 id="yt-player"
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/MXYTWkjBcBw?controls=1&modestbranding=1&enablejsapi=1"
-                allow=" encrypted-media"
+                allow="encrypted-media"
                 allowFullScreen
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
               />
             </div>
           </div>
         </div>
-
       </motion.div>
     </section>
   );
