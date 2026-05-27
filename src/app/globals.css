@@ -46,7 +46,7 @@ body {
     rgba(210, 202, 238, 1) 81%,
     rgba(228, 223, 247, 1) 87%,
     rgba(240, 237, 252, 1) 93%,
-    rgba(247, 245, 255, 1) 100%
+    rgb(254, 254, 255) 100%
   );
   --hero-glow: radial-gradient(
     ellipse at center bottom,
