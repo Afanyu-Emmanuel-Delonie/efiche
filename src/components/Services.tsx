@@ -74,7 +74,7 @@ function Services() {
         ))}
       </div>
 
-      <Button href="#" variant="secondary" className="self-center px-8">Get Our Solutions</Button>
+      <Button href="#" variant="secondary" className="inline-flex self-center px-8">Get Our Solutions</Button>
     </section>
   );
 }

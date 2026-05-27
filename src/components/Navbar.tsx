@@ -47,7 +47,7 @@ function Navbar() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Button href="#" variant="primary" className="hidden md:inline-flex">Get Started</Button>
+            <Button href="#contact" variant="primary" className="hidden md:inline-flex">Get Started</Button>
 
             {/* Hamburger */}
             <button
@@ -65,15 +65,15 @@ function Navbar() {
         {/* Mobile menu */}
         <div
           className="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
-          style={{ maxHeight: open ? '400px' : '0px' }}
+          style={{ maxHeight: open ? '500px' : '0px' }}
         >
           <div className="flex flex-col gap-1 px-6 pb-5">
             {navItems.map((item) => (
-              <a key={item.label} href={item.href} className={`text-sm font-medium py-2 transition border-b last:border-0 ${scrolled ? 'text-primary/70 border-gray-100 hover:text-primary' : 'text-white/80 border-white/10 hover:text-white'}`}>
+              <a key={item.label} href={item.href} onClick={() => setOpen(false)} className={`text-sm font-medium py-2 transition border-b last:border-0 ${scrolled ? 'text-primary/70 border-gray-100 hover:text-primary' : 'text-white/80 border-white/10 hover:text-white'}`}>
                 {item.label}
               </a>
             ))}
-            <Button href="#" variant="primary" className="mt-3 w-full justify-center">Get Started</Button>
+            <Button href="#contact" variant="primary" className="inline-flex mt-3 w-full" onClick={() => setOpen(false)}>Get Started</Button>
           </div>
         </div>
 
