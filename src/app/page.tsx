@@ -9,6 +9,7 @@ import NewsAndEvents from "../components/NewsAndEvents";
 import Ourpartners from "../components/Ourpartners";
 import Services from "../components/Services";
 import Steps from "../components/Steps";
+import BackToTop from "../components/BackToTop";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <section id="faqs"><Faq /></section>
       <section id="news"><NewsAndEvents /></section>
       <Footer />
+      <BackToTop />
     </>
   );
 }
