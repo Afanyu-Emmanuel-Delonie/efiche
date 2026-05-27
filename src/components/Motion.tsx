@@ -27,9 +27,10 @@ interface Props {
   delay?: number
   className?: string
   fade?: boolean
+  style?: React.CSSProperties
 }
 
-export function FadeUp({ children, delay = 0, className, fade = false }: Props) {
+export function FadeUp({ children, delay = 0, className, fade = false, style }: Props) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -41,6 +42,7 @@ export function FadeUp({ children, delay = 0, className, fade = false }: Props) 
       animate={inView ? 'visible' : 'hidden'}
       variants={fade ? fadeVariants : variants}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>
