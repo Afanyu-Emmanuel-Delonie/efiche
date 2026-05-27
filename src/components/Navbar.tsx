@@ -3,7 +3,13 @@
 import React, { useEffect, useState } from 'react'
 import Button from './Button'
 
-const navItems = ['About Us', 'Our Solutions', 'News & Events', 'FAQs']
+const navItems = [
+  { label: 'About Us',       href: '#about' },
+  { label: 'Our Solutions',  href: '#solutions' },
+  { label: 'Contact',        href: '#contact' },
+  { label: 'FAQs',           href: '#faqs' },
+  { label: 'News & Events',  href: '#news' },
+]
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -32,9 +38,9 @@ function Navbar() {
           {/* Desktop nav */}
           <ul className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <li key={item}>
-                <a href="#" className={`text-sm font-medium transition-colors duration-300 ${mutedText}`}>
-                  {item}
+              <li key={item.label}>
+                <a href={item.href} className={`text-sm font-medium transition-colors duration-300 ${mutedText}`}>
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -63,8 +69,8 @@ function Navbar() {
         >
           <div className="flex flex-col gap-1 px-6 pb-5">
             {navItems.map((item) => (
-              <a key={item} href="#" className={`text-sm font-medium py-2 transition border-b last:border-0 ${scrolled ? 'text-primary/70 border-gray-100 hover:text-primary' : 'text-white/80 border-white/10 hover:text-white'}`}>
-                {item}
+              <a key={item.label} href={item.href} className={`text-sm font-medium py-2 transition border-b last:border-0 ${scrolled ? 'text-primary/70 border-gray-100 hover:text-primary' : 'text-white/80 border-white/10 hover:text-white'}`}>
+                {item.label}
               </a>
             ))}
             <Button href="#" variant="primary" className="mt-3 w-full justify-center">Get Started</Button>

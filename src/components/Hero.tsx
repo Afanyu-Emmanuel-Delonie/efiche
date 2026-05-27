@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from 'framer-motion';
 import Button from "./Button";
 
 function Hero() {
@@ -40,15 +41,20 @@ function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-start text-center px-4 md:px-page gap-6 pt-32 md:pt-36 pb-16">
+      <motion.div
+        className="relative z-10 flex flex-col items-center justify-start text-center px-4 md:px-page gap-6 pt-32 md:pt-36 pb-16"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+      >
         <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-snug">
           Transforming Healthcare By <br /> Connecting{" "}
           <span className="text-[#2f86f8]">Africa</span>
         </h1>
 
         <div className="flex gap-3">
-          <Button href="#" variant="secondary" className="px-8 py-3">Get Started</Button>
-          <Button href="#" variant="ghost" className="px-8 py-3">Learn More</Button>
+          <Button href="#contact" variant="secondary" className="px-8 py-3">Get Started</Button>
+          <Button href="#solutions" variant="ghost" className="px-8 py-3">Learn More</Button>
         </div>
 
         {/* Video frame */}
@@ -66,7 +72,7 @@ function Hero() {
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }

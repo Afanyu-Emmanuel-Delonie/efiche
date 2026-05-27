@@ -1,6 +1,6 @@
 import React from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outline-primary" | "outline-secondary";
 
 interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: ButtonVariant;
@@ -13,6 +13,8 @@ const variants: Record<ButtonVariant, string> = {
   primary: "bg-primary text-white hover:opacity-90",
   secondary: "bg-secondary text-white hover:opacity-90",
   ghost: "text-white border border-white/35 bg-white/20 backdrop-blur-sm hover:bg-white/10",
+  "outline-primary": "border border-primary text-primary hover:bg-primary hover:text-white",
+  "outline-secondary": "border border-secondary text-secondary hover:bg-secondary hover:text-white",
 };
 
 function Button({ variant = "primary", className = "", children, ...props }: ButtonProps) {
