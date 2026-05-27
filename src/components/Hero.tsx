@@ -55,10 +55,10 @@ function Hero() {
         </h1>
 
         <div className="flex gap-3">
-          <Button href="#contact" variant="secondary" className="px-8 py-3">
+          <Button href="#contact" variant="secondary" className="inline-flex px-8 py-3">
             Get Started
           </Button>
-          <Button href="#solutions" variant="ghost" className="px-8 py-3">
+          <Button href="#solutions" variant="ghost" className="inline-flex px-8 py-3">
             Learn More
           </Button>
         </div>

@@ -38,12 +38,12 @@ function Aboutus() {
           efficiency.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-0 mt-5">
+        <div className="flex items-center justify-between gap-0 mt-5 w-full">
           {stats.map(({ label, value }, i) => (
-            <div key={label} className="flex items-stretch">
-              <div className="flex flex-col items-center gap-1 px-8">
-                <h2 className="text-2xl md:text-4xl font-extrabold font-mono text-primary">{value}</h2>
-                <p className="text-gray-500 text-xs md:text-sm">{label}</p>
+            <div key={label} className="flex items-stretch flex-1">
+              <div className="flex flex-col items-center gap-0.5 px-2 w-full">
+                <h2 className="text-xl md:text-4xl font-extrabold font-mono text-primary">{value}</h2>
+                <p className="text-gray-500 text-[10px] md:text-sm text-center">{label}</p>
               </div>
               {i < stats.length - 1 && <div className="w-px self-stretch bg-primary/20" />}
             </div>

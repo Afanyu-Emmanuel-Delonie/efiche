@@ -6,7 +6,7 @@ import { FadeUp } from "./Motion";
 function Cta() {
   return (
     <section className="px-4 md:px-page py-12 md:py-20">
-    <div className="relative rounded-4xl min-h-[400px] md:min-h-[480px] flex flex-col justify-end overflow-hidden">
+    <div className="relative rounded-4xl min-h-[560px] md:min-h-[480px] flex flex-col justify-end overflow-hidden">
       {/* Background image */}
       <Image
         src="/general/cta.png"
@@ -32,9 +32,9 @@ function Cta() {
         <p className="text-white/70 text-sm md:text-base max-w-lg">
           Empower your healthcare facility with AI-assisted medical records and seamless digital workflows. Request a demo to see how eFiche can transform your clinic.
         </p>
-        <div className="flex gap-3">
-          <Button href="#contact" variant="secondary" className="px-8 py-3">Get Started</Button>
-          <Button href="#contact" variant="ghost" className="px-8 py-3">Partner With Us</Button>
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <Button href="#contact" variant="secondary" className="inline-flex w-full sm:w-auto px-8 py-3">Get Started</Button>
+          <Button href="#contact" variant="ghost" className="inline-flex w-full sm:w-auto px-8 py-3">Partner With Us</Button>
         </div>
       </FadeUp>
     </div>
