@@ -28,7 +28,7 @@ export default function Contact() {
 
           <div className="relative z-10">
             <h2 className="text-xl lg:text-2xl font-bold leading-snug tracking-tight mb-4 font-mono">
-              We'd Love to hear more from you
+              We&apos;d Love to hear more from you
             </h2>
             <p className="text-white/70 text-sm lg:text-base leading-relaxed mb-12 max-w-sm">
               Got a question about how our platform can help you? We have got the answers.

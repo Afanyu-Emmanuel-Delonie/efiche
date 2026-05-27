@@ -1,10 +1,11 @@
-'use client'
+"use client"
 
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { articles } from '@/lib/articles';
 import Link from 'next/link';
 import { FadeUp } from './Motion';
+import Image from 'next/image';
 
 const ITEMS_PER_PAGE = 2
 
@@ -33,7 +34,7 @@ export default function NewsAndEvents() {
             >
               {/* Image */}
               <div className="w-full sm:w-[45%] min-h-[240px] sm:min-h-full relative overflow-hidden">
-                <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+                <Image src={article.image} alt={article.title} fill className="object-cover" />
                 <span className="absolute top-5 left-5 bg-white/30 backdrop-blur-md text-white text-xs font-medium px-4 py-1.5 rounded-full tracking-wide shadow-sm">
                   {article.category}
                 </span>
@@ -52,7 +53,7 @@ export default function NewsAndEvents() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3 mt-6 pt-4 border-t border-slate-100">
-                  <img src={article.author.avatar} alt={article.author.name} className="w-10 h-10 rounded-full object-cover grayscale border border-slate-100 shadow-sm" />
+                  <Image src={article.author.avatar} alt={article.author.name} width={40} height={40} className="rounded-full object-cover grayscale border border-slate-100 shadow-sm" />
                   <div>
                     <h4 className="text-sm font-semibold text-slate-800 tracking-tight">{article.author.name}</h4>
                     <p className="text-slate-400 text-[11px] mt-0.5">

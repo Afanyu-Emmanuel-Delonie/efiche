@@ -2,6 +2,7 @@ import { articles } from '@/lib/articles'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
@@ -50,7 +51,9 @@ export default async function BlogDetail({ params }: Props) {
 
       {/* Hero */}
       <div className="relative w-full h-[55vh] min-h-80 overflow-hidden">
-        <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+        <div className="absolute inset-0">
+          <Image src={article.image} alt={article.title} fill className="object-cover" />
+        </div>
         <div className="absolute inset-0 bg-primary/70" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-page gap-4">
           <span className="px-4 py-1.5 rounded-full bg-secondary text-white text-xs font-medium tracking-wide">
@@ -60,7 +63,7 @@ export default async function BlogDetail({ params }: Props) {
             {article.title}
           </h1>
           <div className="flex items-center gap-3 mt-2">
-            <img src={article.author.avatar} alt={article.author.name} className="w-10 h-10 rounded-full object-cover border-2 border-white/30" />
+            <Image src={article.author.avatar} alt={article.author.name} width={40} height={40} className="rounded-full object-cover border-2 border-white/30" />
             <div className="text-left">
               <p className="text-white text-sm font-semibold">{article.author.name}</p>
               <p className="text-white/60 text-xs">{article.date} &nbsp;·&nbsp; {article.readTime}</p>
@@ -88,7 +91,7 @@ export default async function BlogDetail({ params }: Props) {
 
         {/* Author card */}
         <div className="mt-16 p-6 rounded-2xl border border-gray-100 bg-gray-50 flex items-center gap-5">
-          <img src={article.author.avatar} alt={article.author.name} className="w-16 h-16 rounded-full object-cover" />
+          <Image src={article.author.avatar} alt={article.author.name} width={64} height={64} className="rounded-full object-cover" />
           <div>
             <p className="font-semibold text-primary">{article.author.name}</p>
             <p className="text-secondary text-sm">{article.author.role}</p>
@@ -112,7 +115,7 @@ export default async function BlogDetail({ params }: Props) {
             {related.map((r) => (
               <Link key={r.id} href={`/blog/${r.id}`} className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col sm:flex-row">
                 <div className="w-full sm:w-2/5 min-h-48 relative overflow-hidden">
-                  <img src={r.image} alt={r.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={r.image} alt={r.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/30 backdrop-blur-sm text-white text-xs font-medium">
                     {r.category}
                   </span>
@@ -123,7 +126,7 @@ export default async function BlogDetail({ params }: Props) {
                     <p className="text-gray-500 text-xs leading-relaxed">{r.excerpt}</p>
                   </div>
                   <div className="flex items-center gap-2 mt-4 pt-3 border-t border-gray-100">
-                    <img src={r.author.avatar} alt={r.author.name} className="w-7 h-7 rounded-full object-cover grayscale" />
+                    <Image src={r.author.avatar} alt={r.author.name} width={28} height={28} className="rounded-full object-cover grayscale" />
                     <p className="text-gray-400 text-xs">{r.author.name} · {r.readTime}</p>
                   </div>
                 </div>
