@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-primary: #1A1333;
+  --color-secondary: #2B82EE;
+  --page-margin: 7.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --spacing-page: var(--page-margin);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+:root {
+  --hero-gradient: linear-gradient(
+    to bottom,
+    rgba(26, 19, 51, 1) 0%,
+    rgba(26, 19, 51, 1) 10%,
+    rgba(30, 23, 62, 1) 22%,
+    rgba(36, 28, 78, 1) 32%,
+    rgba(45, 36, 100, 1) 42%,
+    rgba(68, 55, 130, 1) 50%,
+    rgba(95, 78, 158, 1) 57%,
+    rgba(128, 110, 185, 1) 63%,
+    rgba(160, 145, 208, 1) 69%,
+    rgba(188, 175, 225, 1) 75%,
+    rgba(210, 202, 238, 1) 81%,
+    rgba(228, 223, 247, 1) 87%,
+    rgba(240, 237, 252, 1) 93%,
+    rgba(247, 245, 255, 1) 100%
+  );
+  --hero-glow: radial-gradient(
+    ellipse at center bottom,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(220, 210, 250, 0.3) 35%,
+    transparent 70%
+  );
+}
