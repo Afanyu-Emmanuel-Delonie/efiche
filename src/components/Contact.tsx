@@ -18,7 +18,8 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full bg-slate-50 flex items-center justify-center px-4 md:px-page py-12 md:py-20">
+    <section className="w-full bg-slate-50 flex items-center justify-center py-24 lg:py-28 xl:py-32">
+      <div className="max-container padding-container w-full">
       <div className="w-full bg-white rounded-3xl shadow-xl flex flex-col md:flex-row overflow-hidden border border-slate-100">
         {/* Left Informational Sidebar */}
         <div className="w-full md:w-[42%] bg-primary text-white p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden">
@@ -190,6 +191,7 @@ export default function Contact() {
             </div>
           </form>
         </div>
+      </div>
       </div>
     </section>
   );

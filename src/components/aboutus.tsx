@@ -10,7 +10,8 @@ function Aboutus() {
   ];
 
   return (
-    <section className="px-4 md:px-page py-12 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+    <section className="py-24 lg:py-28 xl:py-32">
+      <div className="max-container padding-container flex flex-col md:flex-row items-center gap-10 md:gap-16">
 
       {/* Left — image with rotated square bg */}
       <FadeUp delay={0} className="relative w-full md:flex-1 flex items-center justify-center" style={{ minHeight: '420px' }}>
@@ -51,6 +52,7 @@ function Aboutus() {
         </div>
       </FadeUp>
 
+      </div>
     </section>
   );
 }

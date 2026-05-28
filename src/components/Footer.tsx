@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-primary text-white pt-16 pb-8 px-4 md:px-page border-t border-white/5">
+    <footer className="w-full bg-primary text-white border-t border-white/5">
+      <div className="max-container padding-container pt-16 pb-8">
 
       {/* Main Links Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 items-start mb-16">
@@ -72,6 +73,7 @@ export default function Footer() {
         </p>
       </div>
 
+      </div>
     </footer>
   );
 }

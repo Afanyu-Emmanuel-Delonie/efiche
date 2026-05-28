@@ -28,7 +28,7 @@ function Navbar() {
   const hamburgerColor = scrolled ? 'bg-primary' : 'bg-white'
 
   return (
-    <nav className={`fixed top-6 left-0 right-0 z-50 px-4 md:px-page transition-all duration-300`}>
+    <nav className={`fixed top-6 left-0 right-0 z-50 padding-container xl:px-24 2xl:px-32 transition-all duration-300`}>
       <div className={`rounded-2xl md:rounded-full border transition-all duration-300 ${bg}`}>
 
         {/* Top bar */}

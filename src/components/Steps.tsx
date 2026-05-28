@@ -23,7 +23,8 @@ const steps = [
 
 function Steps() {
   return (
-    <section className="px-4 md:px-page py-12 md:py-20 flex flex-col gap-12">
+    <section className="py-24 lg:py-28 xl:py-32">
+      <div className="max-container padding-container flex flex-col gap-12">
       {/* Header */}
       <div className="flex flex-col items-center gap-4 text-center">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-mono text-primary leading-snug">
@@ -56,6 +57,7 @@ function Steps() {
             )}
           </React.Fragment>
         ))}
+      </div>
       </div>
     </section>
   );
