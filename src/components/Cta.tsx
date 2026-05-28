@@ -5,7 +5,8 @@ import { FadeUp } from "./Motion";
 
 function Cta() {
   return (
-    <section className="px-4 md:px-page py-12 md:py-20">
+    <section className="py-24 lg:py-28 xl:py-32">
+    <div className="max-container padding-container">
     <div className="relative rounded-4xl min-h-[560px] md:min-h-[480px] flex flex-col justify-end overflow-hidden">
       {/* Background image */}
       <Image
@@ -37,6 +38,7 @@ function Cta() {
           <Button href="#contact" variant="ghost" className="inline-flex w-full sm:w-auto px-8 py-3">Partner With Us</Button>
         </div>
       </FadeUp>
+    </div>
     </div>
     </section>
   );

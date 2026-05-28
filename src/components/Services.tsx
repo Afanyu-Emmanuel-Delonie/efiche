@@ -43,7 +43,8 @@ const services = [
 
 function Services() {
   return (
-    <section className="px-4 md:px-page py-12 md:py-20 flex flex-col gap-10 bg-primary">
+    <section className="py-24 lg:py-28 xl:py-32 bg-primary">
+      <div className="max-container padding-container flex flex-col gap-10">
       {/* Header */}
       <div className="flex flex-col justify-center items-center gap-4">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-mono text-white leading-snug">
@@ -75,6 +76,7 @@ function Services() {
       </div>
 
       <Button href="#" variant="secondary" className="inline-flex self-center px-8">Get Our Solutions</Button>
+      </div>
     </section>
   );
 }

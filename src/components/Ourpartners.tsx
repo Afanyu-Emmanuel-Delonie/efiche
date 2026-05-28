@@ -13,7 +13,8 @@ const logos = [
 
 function Ourpartners() {
   return (
-    <section className="px-4 md:px-page py-5 pb-10 flex flex-col items-center gap-10">
+    <section className="py-10 pb-12">
+      <div className="max-container padding-container flex flex-col items-center gap-10">
       <FadeUp className="flex flex-col items-center gap-3 text-center">
         <h2 className="text-sm md:text-base font-bold text-primary opacity-80">
           Trusted by leading organizations across Africa
@@ -26,6 +27,7 @@ function Ourpartners() {
           </div>
         ))}
       </FadeUp>
+      </div>
     </section>
   )
 }

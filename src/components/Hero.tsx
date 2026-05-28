@@ -44,7 +44,7 @@ function Hero() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-start text-center px-4 md:px-page gap-6 pt-32 md:pt-36 pb-16"
+        className="relative z-10 max-container padding-container flex flex-col items-center justify-start text-center gap-6 pt-32 md:pt-36 pb-16"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}

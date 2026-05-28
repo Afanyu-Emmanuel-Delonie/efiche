@@ -53,8 +53,8 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 function Faq() {
   return (
-    <section className="px-4 md:px-page py-12 md:py-20 bg-primary">
-      <div className="flex flex-col md:flex-row gap-12 md:gap-20">
+    <section className="py-24 lg:py-28 xl:py-32 bg-primary">
+      <div className="max-container padding-container flex flex-col md:flex-row gap-12 md:gap-20">
         {/* Left */}
         <div className="md:w-2/5 flex flex-col gap-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold font-mono text-white leading-snug">
